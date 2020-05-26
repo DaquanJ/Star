@@ -19,7 +19,7 @@ class DailyHoroscope extends Component {
     componentDidMount = async () => {
         try {
             const today = await axios.post(`https://aztro.sameerkumar.website?sign=libra&day=${this.state.day}`)
-            this.setState({horoscope: today.data, isLoading: false})
+            this.setState({horoscope: today.data, horoscopes: today.data.description, isLoading: false})
         } catch (e) {
             console.log(e);
         }
@@ -29,23 +29,20 @@ class DailyHoroscope extends Component {
         e.preventDefault();
         try {
             const response = await axios.post(`https://aztro.sameerkumar.website?sign=libra&day=${this.state.day}`);
-            this.setState({horoscope: response.data});
+            this.setState({horoscope: response.data, horoscopes: response.data.description});
         } catch (e) {
             console.log(e);
         }
     }
 
     saveHoroscope = async () => {
-        // broken - figure out how to set state before post request is made
-       const userHoroscope = await this.state.horoscope.description;
-       this.setState({horoscopes: userHoroscope});
-       const {newHoroscope} = this.state;
+       let newHoroscope = {"horoscopes": this.state.horoscopes};
        try {
            const savedHoroscope = await axios.post('/horoscopes', newHoroscope)
            console.log(savedHoroscope.data);
+           console.log(this.state)
        } catch (e) {
            console.log(e)
-           console.log(this.state.newHoroscope)
        }
    }
 
