@@ -1,7 +1,7 @@
 # module3-project-Daquan
 
 ## application url
-https://yourstar.herokuapp.com/horoscope
+https://yourstar.herokuapp.com/
 
 ## which API I'm using
 https://aztro.sameerkumar.website
