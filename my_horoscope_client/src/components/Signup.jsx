@@ -1,30 +1,50 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class Signup extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            email: '',
-            userName: '',
-            sign: '',
-            password: ''
+            user: {
+                email: '',
+                userName: '',
+                sign: '',
+                password: ''
+            }
          }
          this.handleSubmit = this.handleSubmit.bind(this);
+         this.handleChange = this.handleChange.bind(this);
     }
 
-    async handleSubmit (e) {
+    handleChange(e) {
+        const target = e.target;
+        const value = target.value;
+        const name = target.name;
+        let user = {...this.state.user}
+        user[name] = value;
+        this.setState({user})
+    }
+
+    async handleSubmit(e) {
         e.preventDefault();
-        console.log(this.state);
+        const {user} = this.state;
+        try {
+            const response = await axios.post('/users', user)
+            console.log(response.data)
+        } catch (e) {
+            console.log(e);
+        }
     }
 
     render() { 
+        const {user} = this.state;
         return ( 
             <div>
-                <form onSubmit = {this.handleSubmit}>
-                    <input type="email" placeholder="Email" onChange = {e => this.setState({email: e.target.value})} />
-                    <input type="text" placeholder="User Name" onChange = {e => this.setState({userName: e.target.value})} />
-                    <input type="text" placeholder="Sign" onChange = {e => this.setState({sign: e.target.value})} />
-                    <input type="password" placeholder="Password" onChange = {e => this.setState({password: e.target.value})} />
+                <form onSubmit = {this.handleSubmit} >
+                    <input type="email" placeholder="Email" name="email" value={user.email || ''} onChange = {this.handleChange} />
+                    <input type="text" placeholder="User Name" name="userName" value={user.userName || ''} onChange = {this.handleChange} />
+                    <input type="text" placeholder="Sign" name="sign" value={user.sign || ''} onChange = {this.handleChange} />
+                    <input type="password" placeholder="Password" name="password" value={user.password || ''} onChange = {this.handleChange} />
                     <button type="submit" > Sign Up! </button>
                 </form>
             </div>
