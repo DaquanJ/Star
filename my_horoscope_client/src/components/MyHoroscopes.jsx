@@ -5,6 +5,7 @@ class MyHoroscopes extends Component {
     constructor(props) {
         super(props);
         this.state = { 
+            isLoading: true,
             savedHoroscopes: []
          }
     }
@@ -12,7 +13,7 @@ class MyHoroscopes extends Component {
     componentDidMount = async () => {
         try {
             const response = await axios.get('/horoscopes');
-            this.setState({savedHoroscopes: response.data});
+            this.setState({savedHoroscopes: response.data, isLoading: false});
         } catch(e) {
             console.log(e);
         }
@@ -31,8 +32,15 @@ class MyHoroscopes extends Component {
     }
 
     render() { 
+        
+        const {isLoading} = this.state;
+        if (isLoading) {
+            return <h1> Loading . . . </h1>
+        }
+
         return ( 
             <div>
+                <h1> My Horoscopes </h1>
                 {this.state.savedHoroscopes.map(horoscope => (
                     <div>
                         <h2 key={horoscope.id} > {horoscope.horoscopes} </h2>
