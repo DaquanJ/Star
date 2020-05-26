@@ -11,6 +11,16 @@ class DailyHoroscope extends Component {
          this.getHoroscope = this.getHoroscope.bind(this);
     }
 
+    async componentDidMount() {
+        try {
+            const today = await axios.post(`https://aztro.sameerkumar.website?sign=libra&day=${this.state.day}`)
+            this.setState({horoscopes: today.data})
+            console.log(this.state.horoscopes);
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
     async getHoroscope(e) {
         e.preventDefault();
         try {
