@@ -18,12 +18,25 @@ class MyHoroscopes extends Component {
         }
     }
 
+    deleteHoroscopes = async (id) => {
+        const {savedHoroscopes} = this.state;
+        try {
+            const deleted = await axios.delete(`/horoscopes/${id}`, savedHoroscopes)
+            let deletedHoroscopes = [...this.state.savedHoroscopes].filter(i => i.id !== id)
+            this.setState({savedHoroscopes: deletedHoroscopes})
+            console.log(deleted.data);
+        } catch (e) {
+            console.log(e)
+        }
+    }
+
     render() { 
         return ( 
             <div>
                 {this.state.savedHoroscopes.map(horoscope => (
                     <div>
                         <h2 key={horoscope.id} > {horoscope.horoscopes} </h2>
+                        <button onClick={() => this.deleteHoroscopes(horoscope.id)} > Delete </button>
                     </div>
                 ))}
             </div>
