@@ -20,9 +20,9 @@ class Signup extends Component {
         const target = e.target;
         const value = target.value;
         const name = target.name;
-        let user = {...this.state.user}
+        let user = {...this.state.user};
         user[name] = value;
-        this.setState({user})
+        this.setState({user});
     }
 
     async handleSubmit(e) {
