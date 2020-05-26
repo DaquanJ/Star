@@ -1,11 +1,22 @@
 import React from 'react';
-import Signup from './components/Signup';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import DailyHoroscope from './components/DailyHoroscope';
+import MyHoroscopes from './components/MyHoroscopes';
+import Reviews from './components/Reviews';
+import Footer from './components/Footer';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-     <Signup/>
+     <Router>
+       <Switch>
+         <Route path='/myhoroscopes' component={MyHoroscopes} />
+         <Route path='/reviews' component={Reviews} />
+       </Switch>
+      <DailyHoroscope/>
+      <Footer/>
+     </Router>
     </div>
   );
 }
