@@ -10,4 +10,4 @@ An app that provides daily horoscope information, all those intrigued by the won
 The target users are people who want to know more about themselves and have a passion for ideas beyond what the eye can see, for people who want to up to date with their latest zodiac information!
 
 ## wireframe
-![Zodiapp wireframe]( "Zodiapp")
+![Zodiapp wireframe](https://github.com/DaquanJ/my_horoscope_app/blob/master/my_horoscope_client/wireframe/my_horoscope_wireframe.png "Zodiapp")
