@@ -9,11 +9,10 @@ class MyHoroscopes extends Component {
          }
     }
 
-    async componentDidMount () {
+    async componentDidMount() {
         try {
-            const response = axios.get('/horoscopes');
+            const response = await axios.get('/horoscopes');
             this.setState({savedHoroscopes: response.data});
-            console.log(this.state.savedHoroscopes);
         } catch(e) {
             console.log(e);
         }
@@ -22,7 +21,11 @@ class MyHoroscopes extends Component {
     render() { 
         return ( 
             <div>
-
+                {this.state.savedHoroscopes.map(horoscope => (
+                    <div>
+                        <h2 key={horoscope.id} > {horoscope.horoscopes} </h2>
+                    </div>
+                ))}
             </div>
          );
     }
