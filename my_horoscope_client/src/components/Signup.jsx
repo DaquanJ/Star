@@ -11,9 +11,9 @@ class Signup extends Component {
                 sign: '',
                 password: ''
             }
-         }
-         this.handleSubmit = this.handleSubmit.bind(this);
+         };
          this.handleChange = this.handleChange.bind(this);
+         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(e) {
@@ -41,10 +41,10 @@ class Signup extends Component {
         return ( 
             <div>
                 <form onSubmit = {this.handleSubmit} >
-                    <input type="email" placeholder="Email" name="email" value={user.email || ''} onChange = {this.handleChange} />
-                    <input type="text" placeholder="User Name" name="userName" value={user.userName || ''} onChange = {this.handleChange} />
-                    <input type="text" placeholder="Sign" name="sign" value={user.sign || ''} onChange = {this.handleChange} />
-                    <input type="password" placeholder="Password" name="password" value={user.password || ''} onChange = {this.handleChange} />
+                    <input type="email" placeholder="Email" name="email" value={user.email || ''} onChange={this.handleChange} />
+                    <input type="text" placeholder="User Name" name="userName" value={user.userName || ''} onChange={this.handleChange} />
+                    <input type="text" placeholder="Sign" name="sign" value={user.sign || ''} onChange={this.handleChange} />
+                    <input type="password" placeholder="Password" name="password" value={user.password || ''} onChange={this.handleChange} />
                     <button type="submit" > Sign Up! </button>
                 </form>
             </div>
