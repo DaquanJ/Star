@@ -9,11 +9,18 @@ class Signup extends Component {
             sign: '',
             password: ''
          }
+         this.handleSubmit = this.handleSubmit.bind(this);
     }
+
+    async handleSubmit (e) {
+        e.preventDefault();
+        console.log(this.state);
+    }
+
     render() { 
         return ( 
             <div>
-                <form >
+                <form onSubmit = {this.handleSubmit}>
                     <input type="email" placeholder="Email" onChange = {e => this.setState({email: e.target.value})} />
                     <input type="text" placeholder="User Name" onChange = {e => this.setState({userName: e.target.value})} />
                     <input type="text" placeholder="Sign" onChange = {e => this.setState({sign: e.target.value})} />
