@@ -15,7 +15,7 @@ class Reviews extends Component {
          this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleChange(e) {
+    handleChange = (e) => {
         const target = e.target;
         const value = target.value;
         const name = target.name;
@@ -24,7 +24,7 @@ class Reviews extends Component {
         this.setState({reviews});
     }
 
-   async handleSubmit(e) {
+   handleSubmit = async (e) => {
         e.preventDefault();
         const {reviews} = this.state;
         try {

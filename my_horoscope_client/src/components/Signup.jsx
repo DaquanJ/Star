@@ -16,7 +16,7 @@ class Signup extends Component {
          this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleChange(e) {
+    handleChange = (e) => {
         const target = e.target;
         const value = target.value;
         const name = target.name;
@@ -25,7 +25,7 @@ class Signup extends Component {
         this.setState({user});
     }
 
-    async handleSubmit(e) {
+    handleSubmit = async (e) => {
         e.preventDefault();
         const {user} = this.state;
         try {

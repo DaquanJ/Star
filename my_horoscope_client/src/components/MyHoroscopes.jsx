@@ -9,7 +9,7 @@ class MyHoroscopes extends Component {
          }
     }
 
-    async componentDidMount() {
+    componentDidMount = async () => {
         try {
             const response = await axios.get('/horoscopes');
             this.setState({savedHoroscopes: response.data});

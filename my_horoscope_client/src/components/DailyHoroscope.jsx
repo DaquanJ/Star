@@ -16,28 +16,27 @@ class DailyHoroscope extends Component {
          this.saveHoroscope = this.saveHoroscope.bind(this);
     }
 
-    async componentDidMount() {
+    componentDidMount = async () => {
         try {
             const today = await axios.post(`https://aztro.sameerkumar.website?sign=libra&day=${this.state.day}`)
             this.setState({horoscope: today.data, isLoading: false})
-            console.log(this.state.horoscope);
         } catch (e) {
             console.log(e);
         }
     }
 
-    async getHoroscope(e) {
+    getHoroscope = async (e) => {
         e.preventDefault();
         try {
             const response = await axios.post(`https://aztro.sameerkumar.website?sign=libra&day=${this.state.day}`);
             this.setState({horoscope: response.data});
-            console.log(this.state.horoscope);
         } catch (e) {
             console.log(e);
         }
     }
 
-    async saveHoroscope() {
+    saveHoroscope = async () => {
+        // broken - figure out how to set state before post request is made
        const userHoroscope = await this.state.horoscope.description;
        this.setState({horoscopes: userHoroscope});
        const {newHoroscope} = this.state;
