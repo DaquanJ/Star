@@ -14,7 +14,7 @@ class MyHoroscopes extends Component {
             const response = axios.get('/horoscopes');
             this.setState({savedHoroscopes: response.data});
             console.log(this.state.savedHoroscopes);
-        } catch (e) {
+        } catch(e) {
             console.log(e);
         }
     }
