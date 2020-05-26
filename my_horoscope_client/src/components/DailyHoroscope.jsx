@@ -7,10 +7,13 @@ class DailyHoroscope extends Component {
         this.state = { 
             isLoading: true,
             horoscope: [],
-            horscopes: '',
-            day: 'today'
-         }
+            day: 'today',
+            newHoroscope: {
+                horoscopes: ''
+            }
+         };
          this.getHoroscope = this.getHoroscope.bind(this);
+         this.saveHoroscope = this.saveHoroscope.bind(this);
     }
 
     async componentDidMount() {
@@ -34,14 +37,18 @@ class DailyHoroscope extends Component {
         }
     }
 
-    getDescription() {
-         // use filter to get description from json of horoscope api
-        // setstate, horoscopes with the value 
-    }
-
-    saveHoroscope () {
-        // make post request using value returned from filter method 
-    }
+    async saveHoroscope() {
+       const userHoroscope = await this.state.horoscope.description;
+       this.setState({horoscopes: userHoroscope});
+       const {newHoroscope} = this.state;
+       try {
+           const savedHoroscope = await axios.post('/horoscopes', newHoroscope)
+           console.log(savedHoroscope.data);
+       } catch (e) {
+           console.log(e)
+           console.log(this.state.newHoroscope)
+       }
+   }
 
     render() { 
         const {isLoading} = this.state;
@@ -59,13 +66,13 @@ class DailyHoroscope extends Component {
                     <div>
                         <h1> {this.state.horoscope.current_date} </h1>
                         <h3> Horoscope: {this.state.horoscope.description} </h3>
+                        <button onClick={this.saveHoroscope} > Save ! </button>
                         <p> Compatibility: {this.state.horoscope.compatibility} </p>
                         <p> Mood: {this.state.horoscope.mood} </p>
                         <p> Color: {this.state.horoscope.color} </p>
                         <p> Lucky Number: {this.state.horoscope.lucky_number} </p>
                         <p> Lucky Time: {this.state.horoscope.lucky_time} </p>
                     </div>
-                    
             </div>
          );
     }
