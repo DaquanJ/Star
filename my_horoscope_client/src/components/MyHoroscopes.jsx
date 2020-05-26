@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import axios from 'axios';
 
 class MyHoroscopes extends Component {
     constructor(props) {
@@ -8,10 +8,21 @@ class MyHoroscopes extends Component {
             savedHoroscopes: []
          }
     }
+
+    async componentDidMount () {
+        try {
+            const response = axios.get('/horoscopes');
+            this.setState({savedHoroscopes: response.data});
+            console.log(this.state.savedHoroscopes);
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
     render() { 
         return ( 
             <div>
-                
+
             </div>
          );
     }
