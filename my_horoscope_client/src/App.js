@@ -11,9 +11,10 @@ import './App.css';
 function App() {
   return (
     <div className="App">
+    
      <Router>
        <Switch>
-         <Route to='/login' component={Login} />
+         <Route path='/' exact component={Login} />
          <Route path='/signup' component={Signup} />
          <Route path='/horoscope' component={DailyHoroscope} />
          <Route path='/myhoroscopes' component={MyHoroscopes} />
