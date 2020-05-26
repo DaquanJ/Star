@@ -5,13 +5,16 @@ class DailyHoroscope extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            horoscopes: []
+            horoscopes: [],
+            day: 'today'
          }
+         this.getHoroscope = this.getHoroscope.bind(this);
     }
 
-    async componentDidMount () {
+    async getHoroscope(e) {
+        e.preventDefault();
         try {
-            const response = await axios.post('https://aztro.sameerkumar.website?sign=libra&day=today');
+            const response = await axios.post(`https://aztro.sameerkumar.website?sign=libra&day=${this.state.day}`);
             this.setState({horoscopes: response.data});
             console.log(this.state.horoscopes);
         } catch (e) {
@@ -22,7 +25,11 @@ class DailyHoroscope extends Component {
     render() { 
         return ( 
             <div>
-
+                <form onSubmit={this.getHoroscope} >
+                    <input type="submit" value='Yesterday' onClick={() => this.setState({day:'yesterday'})} />
+                    <input type="submit" value='Today' onClick={() => this.setState({day:'today'})} />
+                    <input type="submit" value='Tomorrow' onClick={() => this.setState({day:'tomorrow'})} />
+                </form>
             </div>
          );
     }
