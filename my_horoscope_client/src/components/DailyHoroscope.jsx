@@ -5,6 +5,7 @@ class DailyHoroscope extends Component {
     constructor(props) {
         super(props);
         this.state = { 
+            isLoading: true,
             horoscopes: [],
             day: 'today'
          }
@@ -14,7 +15,7 @@ class DailyHoroscope extends Component {
     async componentDidMount() {
         try {
             const today = await axios.post(`https://aztro.sameerkumar.website?sign=libra&day=${this.state.day}`)
-            this.setState({horoscopes: today.data})
+            this.setState({horoscopes: today.data, isLoading: false})
             console.log(this.state.horoscopes);
         } catch (e) {
             console.log(e);
@@ -33,6 +34,11 @@ class DailyHoroscope extends Component {
     }
 
     render() { 
+        const {isLoading} = this.state;
+        if (isLoading) {
+            return <h1> Loading . . . </h1>
+        }
+       
         return ( 
             <div>
                 <form onSubmit={this.getHoroscope} >
@@ -40,6 +46,15 @@ class DailyHoroscope extends Component {
                     <input type="submit" value='Today' onClick={() => this.setState({day:'today'})} />
                     <input type="submit" value='Tomorrow' onClick={() => this.setState({day:'tomorrow'})} />
                 </form>
+                    <div>
+                        <h1> {this.state.horoscopes.current_date} </h1>
+                        <h2> Horoscope: {this.state.horoscopes.description} </h2>
+                        <p> Compatibility: {this.state.horoscopes.compatibility} </p>
+                        <p> Mood: {this.state.horoscopes.mood} </p>
+                        <p> Color: {this.state.horoscopes.color} </p>
+                        <p> Lucky Number: {this.state.horoscopes.lucky_number} </p>
+                        <p> Lucky Time: {this.state.horoscopes.lucky_time} </p>
+                    </div>
             </div>
          );
     }
