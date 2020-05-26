@@ -16,6 +16,8 @@ class DailyHoroscope extends Component {
          this.saveHoroscope = this.saveHoroscope.bind(this);
     }
 
+    
+
     componentDidMount = async () => {
         try {
             const today = await axios.post(`https://aztro.sameerkumar.website?sign=libra&day=${this.state.day}`)
@@ -38,9 +40,9 @@ class DailyHoroscope extends Component {
     saveHoroscope = async () => {
        let newHoroscope = {"horoscopes": this.state.horoscopes};
        try {
-           const savedHoroscope = await axios.post('/horoscopes', newHoroscope)
+            
+           const savedHoroscope = await axios.post('https://myzodiac.herokuapp.com/horoscopes', newHoroscope)
            console.log(savedHoroscope.data);
-           console.log(this.state)
        } catch (e) {
            console.log(e)
        }
@@ -59,7 +61,7 @@ class DailyHoroscope extends Component {
                     <input type="submit" value='Today' onClick={() => this.setState({day:'today'})} />
                     <input type="submit" value='Tomorrow' onClick={() => this.setState({day:'tomorrow'})} />
                 </form>
-                    <div>
+                    <div> 
                         <h1> {this.state.horoscope.current_date} </h1>
                         <h3> Horoscope: {this.state.horoscope.description} </h3>
                         <button onClick={this.saveHoroscope} > Save ! </button>

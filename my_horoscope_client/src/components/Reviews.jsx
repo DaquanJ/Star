@@ -28,7 +28,7 @@ class Reviews extends Component {
         e.preventDefault();
         const {reviews} = this.state;
         try {
-            const newReview = await axios.post('/reviews', reviews)
+            const newReview = await axios.post('https://myzodiac.herokuapp.com/reviews', reviews)
             console.log(newReview.data);
         } catch (e) {
             console.log(e);
