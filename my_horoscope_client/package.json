@@ -21,7 +21,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy" : "https://user-horoscope.herokuapp.com",
+  "proxy" : "https://myzodiac.herokuapp.com",
   "eslintConfig": {
     "extends": "react-app"
   },
