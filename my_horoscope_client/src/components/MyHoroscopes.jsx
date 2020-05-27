@@ -22,7 +22,7 @@ class MyHoroscopes extends Component {
     deleteHoroscopes = async (id) => {
         const {savedHoroscopes} = this.state;
         try {
-            const deleted = await axios.delete(`https://myzodiac.herokuapp.com/horoscopes/${id}`, savedHoroscopes)
+            const deleted = await axios.delete(`https://myzodiac.herokuapp.com/horoscopes/${id}`, savedHoroscopes, {headers: { 'Access-Control-Allow-Origin': 'DELETE' }})
             let deletedHoroscopes = [...this.state.savedHoroscopes].filter(i => i.id !== id)
             this.setState({savedHoroscopes: deletedHoroscopes})
             console.log(deleted.data);
