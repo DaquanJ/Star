@@ -1,0 +1,156 @@
+@keyframes zodiac {
+    0% {
+        background-image: url(/assets/2000px-Libra.svg.png) repeat (none);
+    }
+    50% {
+        background-image: url(/assets/gemini_PNG8.png);
+    }
+    100% {
+        background-image: url(/assets/2000px-Libra.svg.png);
+    }
+}
+
+.login-page {
+    display: grid;
+    grid-template-rows: 10% 10%;
+    margin-top: -18%;
+    margin-left: 55%;
+}
+
+.login {
+    display: grid;
+    grid-template-rows: repeat(3,30%);
+    border: solid 2px black;
+    padding: 2%;
+    width: 40%;
+    height: 175%;
+    text-align: center;
+    align-items: center;
+}
+
+.login input {
+    padding: 3%;
+    font-weight: bold;
+    background: none;
+    border: gray 1px solid;
+
+}
+
+.login input:focus {
+    border: blueviolet 1px solid;
+  }
+
+.login button {
+    width: 75%;
+    padding: 2%;
+    background: none;
+    border: black 1px solid;
+    font-weight: bold;
+    margin-left: 12%;
+    transition: .2s ease-in;
+}
+
+.login button:hover {
+  transform: scale(1.00);
+  color: blueviolet;
+  box-shadow: 1px 3px blueviolet;
+  cursor: pointer;
+}
+
+#no-account {
+    border: 2px solid black;
+    margin-top: 22%;
+    justify-content: center;
+    text-decoration: none;
+    color: black;
+    width: 44%;
+    text-align: center;
+    transition: .2s ease-in;
+    
+}
+
+#no-account:hover {
+    transform: scale(1.03);
+    color: blueviolet;
+    box-shadow: 2px 5px 2px blueviolet;
+  }
+
+  #signs {
+    margin-right: 28%;
+    margin-top: 13%;
+    display: flex;
+    justify-content: center;
+    /* animation: zodiac 5s ease-in-out 0s infinite; */
+}
+
+
+  #signs img {
+      width: 25%;
+  }
+
+  /* sign up css */
+
+  .signup-page {
+    display: grid;
+    grid-template-rows: 10% 10%;
+    margin-top: -18%;
+    margin-left: 55%;
+    
+  }
+
+  .signup {
+    display: grid;
+    grid-template-rows: repeat(5,20%);
+    border: solid 2px black;
+    padding: 2%;
+    width: 40%;
+    height: 120%;
+    text-align: center;
+    align-items: center;
+  }
+
+  .signup input {
+    padding: 3%;
+    font-weight: bold;
+    background: none;
+    border: gray 1px solid;
+  }
+
+  .signup input:focus {
+    border: blueviolet 1px solid;
+  }
+
+  .signup button {
+    width: 75%;
+    padding: 2%;
+    background: none;
+    border: black 1px solid;
+    font-weight: bold;
+    margin-left: 12%;
+    transition: .2s ease-in;
+  }
+
+  .signup button:hover {
+    transform: scale(1.00);
+  color: blueviolet;
+  box-shadow: 1px 3px blueviolet;
+  cursor: pointer;
+  }
+
+  #yes-account  {
+    border: 2px solid black;
+    margin-top: 15%;
+    justify-content: center;
+    text-decoration: none;
+    color: black;
+    width: 44%;
+    text-align: center;
+    transition: .2s ease-in;
+  }
+
+  #yes-account:hover {
+        transform: scale(1.03);
+        color: blueviolet;
+        box-shadow: 2px 5px 2px blueviolet;
+}
+  
