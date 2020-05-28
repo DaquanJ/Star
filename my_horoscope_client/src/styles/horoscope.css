@@ -123,6 +123,7 @@
     border-radius: 3%;
     border: 1px solid black;
     background: none;
+    font-family: 'Raleway', sans-serif;
 }
 
 .reviews input:focus {
@@ -130,12 +131,13 @@
   }
 
 .reviews textarea {
-    margin-top: 2%;
-   height: 250%;
+   margin-top: 2%;
+   height: 200%;
    border: 1px solid black;
-   border-radius: 1%;
+   border-radius: .8%;
    background: none;
    padding: 1%;
+   font-family: 'Raleway', sans-serif;
 }
 
 .reviews textarea:focus {
@@ -154,4 +156,8 @@
     transform: scale(1.00);
     color: blueviolet;
     box-shadow: 2px 5px 2px blueviolet; 
+}
+
+.reviews button:active {
+    transform: scale(.9);
 }
