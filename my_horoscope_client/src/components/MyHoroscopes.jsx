@@ -39,10 +39,10 @@ class MyHoroscopes extends Component {
         }
 
         return ( 
-            <div>
+            <div className='saved' >
                 <h1> My Horoscopes </h1>
                 {this.state.savedHoroscopes.map(horoscope => (
-                    <div>
+                    <div className='myhoros' >
                         <h2 key={horoscope.id} > {horoscope.horoscopes} </h2>
                         <button onClick={() => this.deleteHoroscopes(horoscope.id)} > Delete </button>
                     </div>

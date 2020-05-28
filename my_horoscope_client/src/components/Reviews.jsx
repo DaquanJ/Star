@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import '../styles/horoscope.css';
 
 
 class Reviews extends Component {
@@ -7,7 +8,7 @@ class Reviews extends Component {
         super(props);
         this.state = { 
             reviews: {
-                userName: '',
+                userName: '', 
                 review: ''
             }
          };
@@ -39,10 +40,11 @@ class Reviews extends Component {
     render() { 
         const {reviews} = this.state;
         return ( 
-            <div>
-                <form onSubmit = {this.handleSubmit} >
+            <div className='reviews-page' >
+                <h1 id='title' > Write a Review! </h1>
+                <form className='reviews' onSubmit = {this.handleSubmit} >
                     <input type="text" placeholder="User Name (Optional)" name="userName" value={reviews.userName || ''} onChange = {this.handleChange} />
-                    <input type="text" placeholder="Review" name="review" value={reviews.review || ''} onChange = {this.handleChange} />
+                    <textarea type="text" placeholder="Review" name="review" value={reviews.review || ''} onChange = {this.handleChange} />
                     <button> Submit Review ! </button>
                 </form>
             </div>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import '../styles/auth.css';
 
 class Login extends Component {
     constructor(props) {
@@ -12,13 +13,18 @@ class Login extends Component {
 
     render() { 
         return ( 
-            <div>
+            <div className='page' >
+            <div id='signs'>
+                <img src="/assets/2000px-Libra.svg.png" alt="signs"/>
+            </div>
+            <div className='login-page' >
                 <form className='login' >
                     <input type="text" placeholder="User Name"/>
                     <input type="password" placeholder="Password" />
                     <button type="submit" > Login </button>
                 </form>
-                <Link id='no-account' to='/signup' > Don't have an account? Sign up </Link>
+                <Link id='no-account' to='/signup' > <p> Don't have an account? Sign up </p>  </Link>
+            </div>
             </div>
          );
     }
