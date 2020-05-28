@@ -1,0 +1,22 @@
+.footer {
+    margin-top: 18%;
+    text-align: center;
+}
+
+#footer-list {
+    display: grid;
+    grid-template-columns: repeat(4,20%);
+    padding: 1%;
+}
+
+#footer-links {
+    text-decoration: none;
+    list-style: none;
+    color: black;
+    transition: .2s ease-in;
+}
+
+#footer-links:hover {
+    color: blueviolet;
+    transform: scale(1.03);
+}
