@@ -13,12 +13,12 @@ class Login extends Component {
     render() { 
         return ( 
             <div>
-                <form >
+                <form className='login' >
                     <input type="text" placeholder="User Name"/>
                     <input type="password" placeholder="Password" />
                     <button type="submit" > Login </button>
                 </form>
-                <Link to='/signup' > Don't have an account? Sign up </Link>
+                <Link id='no-account' to='/signup' > Don't have an account? Sign up </Link>
             </div>
          );
     }
