@@ -41,7 +41,7 @@ class DailyHoroscope extends Component {
        let newHoroscope = {"horoscopes": this.state.horoscopes};
        try {
             
-           const savedHoroscope = await axios.post('/horoscopes', newHoroscope)
+           const savedHoroscope = await axios.post('https://myzodiac.herokuapp.com/horoscopes', newHoroscope, {headers: { 'Access-Control-Allow-Origin': 'POST' }})
            console.log(savedHoroscope.data);
        } catch (e) {
            console.log(e)
