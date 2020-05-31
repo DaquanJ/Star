@@ -94,6 +94,27 @@
     justify-content: center;
 }
 
+.saved button {
+    margin-left: 5%;
+    padding: 1%;
+    background: none;
+    border: 1px solid black;
+    text-align: center;
+    font-weight: bolder;
+    width: 10%;
+    transition: .2s ease-in;
+}
+
+.saved button:hover {
+    border: blueviolet 1px solid;
+    color: blueviolet;
+    cursor: pointer;
+    box-shadow: 2px 3px blueviolet; 
+}
+
+.saved button:active {
+    transform: scale(.9);
+}
 
 
 
