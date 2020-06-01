@@ -30,7 +30,7 @@ class Signup extends Component {
         e.preventDefault();
         const {user} = this.state;
         try {
-            const response = await axios.post('/users', user,{headers: { 'Content-Type': 'application/json' }})
+            const response = await axios.post('/users', user,{headers: { 'Access-Control-Allow-Origin': 'POST' }})
             console.log(response.data)
         } catch (e) {
             console.log(e);
