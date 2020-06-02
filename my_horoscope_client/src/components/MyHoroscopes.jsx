@@ -12,7 +12,7 @@ class MyHoroscopes extends Component {
 
     componentDidMount = async () => {
         try {
-            const response = await axios.get('https://myzodiac.herokuapp.com/horoscopes');
+            const response = await axios.get('https://cors-anywhere.herokuapp.com/https://myzodiac.herokuapp.com/horoscopes');
             this.setState({savedHoroscopes: response.data, isLoading: false});
         } catch(e) {
             console.log(e);
@@ -22,7 +22,7 @@ class MyHoroscopes extends Component {
     deleteHoroscopes = async (id) => {
         const {savedHoroscopes} = this.state;
         try {
-            const deleted = await axios.delete(`https://myzodiac.herokuapp.com/horoscopes/${id}`, savedHoroscopes, {headers: { 'Access-Control-Allow-Origin': 'DELETE' }})
+            const deleted = await axios.delete(`https://cors-anywhere.herokuapp.com/https://myzodiac.herokuapp.com/horoscopes/${id}`, savedHoroscopes)
             let deletedHoroscopes = [...this.state.savedHoroscopes].filter(i => i.id !== id)
             this.setState({savedHoroscopes: deletedHoroscopes})
             console.log(deleted.data);
