@@ -30,6 +30,7 @@ class Reviews extends Component {
         const {reviews} = this.state;
         try {
             const newReview = await axios.post('https://cors-anywhere.herokuapp.com/https://myzodiac.herokuapp.com/reviews', reviews)
+            document.getElementById('posted').style.display = 'block'
             console.log(newReview.data);
         } catch (e) {
             console.log(e);
@@ -46,6 +47,7 @@ class Reviews extends Component {
                     <input type="text" placeholder="User Name (Optional)" name="userName" value={reviews.userName || ''} onChange = {this.handleChange} />
                     <textarea type="text" placeholder="Review" name="review" value={reviews.review || ''} onChange = {this.handleChange} />
                     <button> Submit Review ! </button>
+                    <p id='posted' style={{display: 'none'}}  > Yay, your review was sent successfully ! </p>
                 </form>
             </div>
          );

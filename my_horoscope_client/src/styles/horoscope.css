@@ -134,7 +134,6 @@
     margin-left: 22%;
     border: 2px solid black;
     padding: 2%;
-
 }
 
 .reviews input {
@@ -181,4 +180,12 @@
 
 .reviews button:active {
     transform: scale(.9);
+}
+
+#posted {
+    color: silver;
+    font-weight: bolder;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 5%;
 }

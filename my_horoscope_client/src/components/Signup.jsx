@@ -31,6 +31,7 @@ class Signup extends Component {
         const {user} = this.state;
         try {
             const response = await axios.post('https://cors-anywhere.herokuapp.com/https://myzodiac.herokuapp.com/users', user)
+            document.getElementById('success').style.display = 'block'
             console.log(response.data)
         } catch (e) {
             console.log(e);
@@ -50,6 +51,7 @@ class Signup extends Component {
                     <input type="text" placeholder="User Name" name="userName" value={user.userName || ''} onChange={this.handleChange} />
                     <input type="text" placeholder="Sign" name="sign" value={user.sign || ''} onChange={this.handleChange} />
                     <input type="password" placeholder="Password" name="password" value={user.password || ''} onChange={this.handleChange} />
+                    <p id='success' style={{display: 'none'}} > Congratulations <br/> Your Account was made! </p>
                     <button type="submit" > Sign Up! </button>
                 </form>
                 <Link id='yes-account' to='/' > <p> Already have an account? Log in </p>  </Link>

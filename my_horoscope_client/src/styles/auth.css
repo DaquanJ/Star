@@ -12,7 +12,7 @@
 
 .login-page {
     display: grid;
-    grid-template-rows: 10% 10%;
+    grid-template-rows: 75% 10%;
     margin-top: -18%;
     margin-left: 55%;
 }
@@ -23,7 +23,7 @@
     border: solid 2px black;
     padding: 2%;
     width: 40%;
-    height: 175%;
+    height: 200px;
     text-align: center;
     align-items: center;
 }
@@ -46,6 +46,7 @@
     background: none;
     border: black 1px solid;
     font-weight: bold;
+    margin-top: 10%;
     margin-left: 12%;
     transition: .2s ease-in;
 }
@@ -59,10 +60,11 @@
 
 #no-account {
     border: 2px solid black;
-    margin-top: 22%;
     justify-content: center;
     text-decoration: none;
     color: black;
+    margin-top: 20px;
+    height: 50px;
     width: 44%;
     text-align: center;
     transition: .2s ease-in;
@@ -92,8 +94,8 @@
 
   .signup-page {
     display: grid;
-    grid-template-rows: 10% 10%;
-    margin-top: -18%;
+    grid-template-rows: 75% 10%;
+    margin-top: -17%;
     margin-left: 55%;
     
   }
@@ -104,7 +106,7 @@
     border: solid 2px black;
     padding: 2%;
     width: 40%;
-    height: 120%;
+    height: 210px;
     text-align: center;
     align-items: center;
   }
@@ -126,6 +128,7 @@
     background: none;
     border: black 1px solid;
     font-weight: bold;
+    margin-top: 9%;
     margin-left: 12%;
     transition: .2s ease-in;
   }
@@ -137,12 +140,19 @@
   cursor: pointer;
   }
 
+  #success {
+    margin: 0%;
+    color: silver;
+    font-weight: bold;
+  }
+
   #yes-account  {
     border: 2px solid black;
-    margin-top: 15%;
+    margin-top: 20px;
     justify-content: center;
     text-decoration: none;
     color: black;
+    height: 50px;
     width: 44%;
     text-align: center;
     transition: .2s ease-in;
