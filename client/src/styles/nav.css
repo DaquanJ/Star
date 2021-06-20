@@ -1,11 +1,13 @@
 .footer {
-    margin-top: 18%;
-    text-align: center;
+
+    bottom: 0;
+    padding: 1%;
+    width: 95%;
 }
 
 #footer-list {
     display: grid;
-    grid-template-columns: repeat(4,20%);
+    grid-template-columns: repeat(4, 25%);
     padding: 1%;
 }
 
