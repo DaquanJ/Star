@@ -1,5 +1,6 @@
-import axios from 'axios';
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 
 const Horoscope = ({ match }) => {
@@ -30,36 +31,32 @@ const Horoscope = ({ match }) => {
 
     return (
         <div>
-            <h1> {match.params.sign}</h1>
+            <Link to='/' > <h1 id='app-name' > Your Star </h1> </Link>
             <form className='days' onClick={(e) => getDay(e)} onSubmit={getHoroscope} >
                 <input type="submit" value='yesterday' id='day' />
                 <input type="submit" value='today' id='day' />
                 <input type="submit" value='tomorrow' id='day' />
             </form>
             <div className='zodiac' >
-                <div>
-                    <h1> {horoscope.current_date} </h1>
+                <h1 id="title"> {match.params.sign}</h1>
+                <div className="the-date" >
+                    <p id="the-day" > {day.day} </p>
+                    <p id="date">  {horoscope.current_date} </p>
                 </div>
-                <div>
-                    <p> {horoscope.description} </p>
+                <div id='horoscope'>
+                    <h2 id="horoscope-head" > Horoscope </h2>
+                    <p id="horoscope"> {horoscope.description} </p>
                 </div>
-                <div>
-                    {/* <button onClick={this.saveHoroscope} > Save ! </button> */}
-                </div>
-                <div>
-                    <p> Compatibility: {horoscope.compatibility} </p>
-                </div>
-                <div>
-                    <p> Mood: {horoscope.mood} </p>
-                </div>
-                <div>
-                    <p> Color: {horoscope.color} </p>
-                </div>
-                <div>
-                    <p> Lucky Number: {horoscope.lucky_number} </p>
-                </div>
-                <div>
-                    <p> Lucky Time: {horoscope.lucky_time} </p>
+                <ul className='info'>
+                    <h3 id="basics"> BASICS </h3>
+                    <li id="mood"> Mood: {horoscope.mood} </li>
+                    <li id="compatibility"> Compatibility: {horoscope.compatibility} </li>
+                    <li id="color" > Color: {horoscope.color} </li>
+                    <li id="number"> Lucky Number: {horoscope.lucky_number} </li>
+                    <li id="time"> Lucky Time: {horoscope.lucky_time} </li>
+                </ul>
+                <div id='signs-app'>
+                    <img src="https://static.wixstatic.com/media/e6f9d7_1cf63a10d9124730b66cfb48e7683a83~mv2.png/v1/fill/w_504,h_508,al_c,q_85,usm_0.66_1.00_0.01/Zodiac%20Wheel.webp" alt="signs" />
                 </div>
             </div>
         </div>

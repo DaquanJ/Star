@@ -1,20 +1,28 @@
 .footer {
-
+    position: fixed;
     bottom: 0;
+    left: 0;
     padding: 1%;
-    width: 95%;
+    width: 100%;
+}
+
+.footer hr {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to left, #ccc, #333, #ccc);
 }
 
 #footer-list {
     display: grid;
-    grid-template-columns: repeat(4, 25%);
-    padding: 1%;
+    grid-template-columns: repeat(1, 100%);
+    padding: .5%;
 }
 
 #footer-links {
     text-decoration: none;
     list-style: none;
-    color: black;
+    color: gray;
     transition: .2s ease-in;
 }
 
