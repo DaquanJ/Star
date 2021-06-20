@@ -16,7 +16,7 @@ class Sign extends Component {
     render() {
         return (
             <div className='page' >
-                <h1> Your Star </h1>
+                {/* <h1> Your Star </h1> */}
                 <div id='signs'>
                     <img src="https://static.wixstatic.com/media/e6f9d7_1cf63a10d9124730b66cfb48e7683a83~mv2.png/v1/fill/w_504,h_508,al_c,q_85,usm_0.66_1.00_0.01/Zodiac%20Wheel.webp" alt="signs" />
                 </div>
