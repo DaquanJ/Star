@@ -38,7 +38,7 @@ const Horoscope = ({ match }) => {
                 <input type="submit" value='tomorrow' id='day' />
             </form>
             <div className='zodiac' >
-                <h1 id="title"> {match.params.sign}</h1>
+                <h1 id="title"> {match.params.sign.toUpperCase()}</h1>
                 <div className="the-date" >
                     <p id="the-day" > {day.day} </p>
                     <p id="date">  {horoscope.current_date} </p>
