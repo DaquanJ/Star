@@ -31,14 +31,14 @@ const Horoscope = ({ match }) => {
 
     return (
         <div>
-            <Link to='/' > <h1 id='app-name' > Your Star </h1> </Link>
+            <Link to='/' > <h1 id='app-name' > Your Star </h1> <img style={{ width: '4%', margin: '1% 0% 0% -5%' }} src="https://www.pngkey.com/png/full/182-1828465_picture-black-and-white-zodiac-from-the-box.png" alt="" /> </Link>
             <form className='days' onClick={(e) => getDay(e)} onSubmit={getHoroscope} >
                 <input type="submit" value='yesterday' id='day' />
                 <input type="submit" value='today' id='day' />
                 <input type="submit" value='tomorrow' id='day' />
             </form>
             <div className='zodiac' >
-                <h1 id="title"> {match.params.sign.toUpperCase()}</h1>
+                <h1 id="title"> {match.params.sign.toUpperCase()} </h1>
                 <div className="the-date" >
                     <p id="the-day" > {day.day} </p>
                     <p id="date">  {horoscope.current_date} </p>
@@ -49,6 +49,7 @@ const Horoscope = ({ match }) => {
                 </div>
                 <ul className='info'>
                     <h3 id="basics"> BASICS </h3>
+                    <li id="birthdays" > Dates: {horoscope.date_range} </li>
                     <li id="mood"> Mood: {horoscope.mood} </li>
                     <li id="compatibility"> Compatibility: {horoscope.compatibility} </li>
                     <li id="color" > Color: {horoscope.color} </li>
