@@ -33,9 +33,9 @@ const Horoscope = ({ match }) => {
         <div>
             <Link to='/' > <h1 id='app-name' > Your Star </h1> <img style={{ width: '4%', margin: '1% 0% 0% -5%' }} src="https://www.pngkey.com/png/full/182-1828465_picture-black-and-white-zodiac-from-the-box.png" alt="" /> </Link>
             <form className='days' onClick={(e) => getDay(e)} onSubmit={getHoroscope} >
-                <input type="submit" value='yesterday' id='day' />
-                <input type="submit" value='today' id='day' />
-                <input type="submit" value='tomorrow' id='day' />
+                <input type="submit" value='Yesterday' id='day' />
+                <input type="submit" value='Today' id='day' />
+                <input type="submit" value='Tomorrow' id='day' />
             </form>
             <div className='zodiac' >
                 <h1 id="title"> {match.params.sign.toUpperCase()} </h1>
