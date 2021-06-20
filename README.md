@@ -1,8 +1,7 @@
 # module3-project-Daquan
 
 ## application url
-https://yourstar.herokuapp.com/
-
+https://DaquanJ.github.io/Star/
 ## which API I'm using
 https://aztro.sameerkumar.website
 
