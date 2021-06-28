@@ -1,20 +1,4 @@
-/* SIGN CSS */
-.page {
-    display: grid;
-    grid-template-rows: 33% 33% 33%;
-    row-gap: 30%;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10%;
-    width: 90%;
-}
-
-#signs img {
-    width: 100%;
-    animation: rotate 60s ease-in-out 0s infinite;
-    border-radius: 50%;
-}
-
+/* HOROSCOPE CSS  */
 @keyframes rotate {
     to {
         rotate: 360deg;
@@ -25,33 +9,6 @@
     }
 }
 
-#sign {
-    padding: 1%;
-    border: none;
-    background: transparent;
-    border-bottom: 1px solid darkorchid;
-    color: linear-gradient(to left, #ccc, #333, #ccc);
-    font-weight: bold;
-    font-style: italic;
-    font-size: larger;
-    margin-bottom: 10%;
-}
-
-#sign:focus {
-    outline: none;
-    color: lightslategray;
-}
-
-.page h1 {
-    margin-left: 33%;
-    color: blueviolet;
-    font-style: italic;
-    font-weight: bold;
-
-}
-
-
-/* HOROSCOPE CSS  */
 .days {
     display: grid;
     grid-template-columns: repeat(3, 33%);
@@ -124,18 +81,41 @@
     box-shadow: .3px .3px 1px .2px blueviolet;
 }
 
+#signs-image {
+    grid-area: signs;
+    width: 60%;
+    animation: rotate 30s ease-in-out 0s infinite;
+}
+
 #title {
     grid-area: sign;
+    padding: 2%;
+    display: flex;
+    flex-direction: row;
     width: auto;
+}
+
+#title input {
+    width: 64%;
+    border: transparent;
     border-bottom: 1.5px dashed lightslategray;
+    background: none;
+    font-size: xx-large;
+    font-weight: bold;
     color: lightslategray;
+    text-transform: uppercase;
+}
+
+#title input:focus {
+    outline: none;
+    color: rgba(70, 18, 120, 0.7);
 }
 
 .the-date {
     grid-area: date;
     display: grid;
-    grid-template-columns: 50% 50%;
-    width: 25%;
+    grid-template-columns: 40% 40%;
+    width: 50%;
     padding: 2%;
 }
 
@@ -177,10 +157,4 @@
 #horoscope {
     grid-area: horoscope;
     width: 75%;
-}
-
-#signs-app {
-    grid-area: signs;
-    width: 60%;
-    animation: rotate 30s ease-in-out 0s infinite;
 }
