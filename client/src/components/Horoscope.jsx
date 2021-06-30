@@ -28,6 +28,12 @@ const Horoscope = () => {
         }
     }
 
+    // using this method to pass into the sign form , to override the submit default 
+    const horoscopes = (e) => {
+        e.preventDefault()
+        getHoroscope();
+    }
+
 
     useEffect(() => {
         getHoroscope();
@@ -46,7 +52,7 @@ const Horoscope = () => {
                 <div id='signs-image'>
                     <img src="https://static.wixstatic.com/media/e6f9d7_1cf63a10d9124730b66cfb48e7683a83~mv2.png/v1/fill/w_504,h_508,al_c,q_85,usm_0.66_1.00_0.01/Zodiac%20Wheel.webp" alt="signs" />
                 </div>
-                <form id='title' onChange={(e) => getSign(e)} onSubmit={getHoroscope} >
+                <form id='title' onChange={(e) => getSign(e)} onSubmit={(e) => horoscopes(e)} >
                     <input id='signs' type="text" placeholder="ENTER YOUR SIGN" required />
                 </form>
                 <div className="the-date" >
